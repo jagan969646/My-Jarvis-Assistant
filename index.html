@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVIS Strategic Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background-color: #000;
+        color: #22d3ee;
+        font-family: 'Exo 2', sans-serif;
+        overflow: hidden;
+      }
+      .font-orbitron { font-family: 'Orbitron', sans-serif; }
+      
+      .scanline {
+        position: fixed;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 100;
+        background-size: 100% 4px, 3px 100%;
+        pointer-events: none;
+      }
+
+      .hud-border {
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+        backdrop-filter: blur(8px);
+      }
+
+      @keyframes flicker {
+        0% { opacity: 0.97; }
+        5% { opacity: 0.95; }
+        10% { opacity: 0.9; }
+        15% { opacity: 0.95; }
+        25% { opacity: 0.98; }
+        30% { opacity: 0.9; }
+        100% { opacity: 1; }
+      }
+      
+      .animate-flicker { animation: flicker 0.1s infinite; }
+      
+      .camera-feed {
+        filter: grayscale(20%) contrast(120%) brightness(110%) sepia(10%) hue-rotate(180deg);
+        transform: scaleX(-1);
+      }
+
+      .glitch-text {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(34, 211, 238, 0.3); border-radius: 10px; }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div class="scanline"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
