@@ -1,0 +1,9 @@
+
+{
+  "name": "JARVIS - AI Strategic Assistant",
+  "description": "A futuristic, high-performance AI assistant inspired by Jarvis, featuring real-time voice interaction, visual analysis, and system control simulations.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
