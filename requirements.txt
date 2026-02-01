@@ -1,0 +1,4 @@
+google-generativeai  # The Brain (Gemini)
+SpeechRecognition    # The Ears
+pyttsx3              # The Voice
+pyaudio              # Microphone support
